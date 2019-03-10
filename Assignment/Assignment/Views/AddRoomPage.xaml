@@ -3,17 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Assignment.Views.AddRoomPage">
+             x:Class="Assignment.Views.AddRoomPage"
+             BackgroundColor="{DynamicResource GenericBackgroundColor}"
+             Title="Add Room">
     <ContentPage.Content>
-        <TableView Intent="Form">
-            <TableView.Root>
-                <TableSection>
-                    <EntryCell  Text="{Binding RoomName}" Placeholder="Room Name"/>
-                    <ViewCell>
-                        <Button Text="Add Room" Command="{Binding OnPressedButton}"/>
-                    </ViewCell>
-                </TableSection>
-            </TableView.Root>
-        </TableView>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Entry Text="{Binding RoomName}" Placeholder="Room Name"></Entry>
+            <Button Text="Ok" Command="{Binding OnPressedButton}"></Button>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
