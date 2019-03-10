@@ -4,6 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"         
              x:Class="Assignment.Views.RoomPage"
+             x:Name="contpage"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Room List">
     <ContentPage.ToolbarItems>
@@ -25,7 +26,7 @@
                         <StackLayout BackgroundColor="Gray" Margin="10">
                             <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Handle_ItemSelected}" CommandParameter="{Binding .}">
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
                                 </TapGestureRecognizer>
                             </StackLayout.GestureRecognizers>
                         </StackLayout>

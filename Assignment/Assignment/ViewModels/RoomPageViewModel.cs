@@ -39,8 +39,16 @@ namespace Assignment.ViewModels
         public async Task SelectedItemExecuted(object obj)
         {
             var selectRoom = obj;
-            await NavigationService.NavigateAsync("ChatPage");
-            MessagingCenter.Send<RoomPageViewModel, object>(this, "RoomProp", selectRoom);
+            Room data = (Room)obj;
+            NavigationParameters param = new NavigationParameters
+                {
+                    { "RoomName", data.Name },
+                    //{"Date",data.d.ToString() },
+                    {"Id",data.Key.ToString() },
+                };
+            // MessagingCenter.Send<RoomPageViewModel, object>(this, "RoomProp", selectRoom);
+            await NavigationService.NavigateAsync("ChatPage",param,false);
+            
         }
 
         public async void RefreshCommandExecuted()

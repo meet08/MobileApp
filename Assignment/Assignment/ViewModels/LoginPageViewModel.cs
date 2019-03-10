@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Assignment.Models;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -35,6 +36,7 @@ namespace Assignment.ViewModels
 
         public async void LogInCommandExecuted()
         {
+            User.UserName = UserName;
             await NavigationService.NavigateAsync("RoomPage");
         }
     }

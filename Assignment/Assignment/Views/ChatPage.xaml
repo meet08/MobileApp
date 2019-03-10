@@ -3,6 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Assignment.Views.ChatPage">
-  
+             x:Class="Assignment.Views.ChatPage"
+             BackgroundColor="{DynamicResource GenericBackgroundColor}"
+             Title="{Binding RoomName}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <ListView Grid.Row="0" ItemsSource="{Binding ListChat}"
+				SeparatorVisibility="None" x:Name="listchat">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <TextCell x:Name="_username" Text="{Binding UserName}" Detail="{Binding UserMessage}" DetailColor="Fuchsia"/>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="1" RowSpacing="5">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Entry Placeholder="Write Message .." Grid.Column="0" Text="{Binding Message}" x:Name="_etMessage"/>
+                <Button Text="Send!" Grid.Column="1" Command="{Binding OnSend}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
