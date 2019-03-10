@@ -4,5 +4,16 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Assignment.Views.AddRoomPage">
-  
+    <ContentPage.Content>
+        <TableView Intent="Form">
+            <TableView.Root>
+                <TableSection>
+                    <EntryCell  Text="{Binding RoomName}" Placeholder="Room Name"/>
+                    <ViewCell>
+                        <Button Text="Add Room" Command="{Binding OnPressedButton}"/>
+                    </ViewCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
 </ContentPage>

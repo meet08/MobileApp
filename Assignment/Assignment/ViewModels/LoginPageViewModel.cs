@@ -11,7 +11,8 @@ namespace Assignment.ViewModels
 	public class LoginPageViewModel : ViewModelBase
 	{
         public DelegateCommand LoginCommand { get; }
-        public LoginPageViewModel(INavigationService navigation, IEventAggregator eventAggregator) :base(navigation, eventAggregator)
+
+        public LoginPageViewModel(INavigationService navigation) :base(navigation)
         {
             NavigationService = navigation;
             LoginCommand = new DelegateCommand(LogInCommandExecuted, LogInCommandCanExecute)
@@ -22,7 +23,7 @@ namespace Assignment.ViewModels
         public string UserName
         {
             get { return _userName; }
-            set { SetProperty(ref _userName, value); }
+            set { SetProperty(ref _userName, value); RaisePropertyChanged("Username"); }
         }
 
         public bool LogInCommandCanExecute()

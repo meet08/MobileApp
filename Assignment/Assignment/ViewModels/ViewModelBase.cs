@@ -20,10 +20,21 @@ namespace Assignment.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public ViewModelBase(INavigationService navigationService, IEventAggregator eventAggregator)
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { SetProperty(ref _isBusy, value, () => RaisePropertyChanged(nameof(IsNotBusy))); }
+        }
+
+        public bool IsNotBusy
+        {
+            get { return !IsBusy; }
+        }
+        public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
-            EventAggregator = eventAggregator;
+            //EventAggregator = eventAggregator;
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
