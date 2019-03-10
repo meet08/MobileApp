@@ -4,11 +4,12 @@ using Assignment.ViewModels;
 using Assignment.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Unity;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Assignment
 {
-    public partial class App
+    public partial class App : PrismApplication
     {
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.

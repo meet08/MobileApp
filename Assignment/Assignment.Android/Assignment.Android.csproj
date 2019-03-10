@@ -49,6 +49,9 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Firebase.Xamarin">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\kyordoctorsapp\kyordoctorsapp\KyorDoctor\dll\Firebase.Xamarin.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
