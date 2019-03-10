@@ -4,5 +4,10 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Assignment.Views.LoginPage">
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Entry Text="{Binding UserName}" Placeholder="User Name"></Entry>
+        <Button Text="Ok" Command="{Binding LoginCommand}"></Button>
+    </StackLayout>
   
 </ContentPage>
