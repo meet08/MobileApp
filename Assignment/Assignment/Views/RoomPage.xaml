@@ -15,15 +15,13 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
-        <ListView ItemsSource="{Binding RM}" SeparatorVisibility="None"  x:Name="_lstx" RowHeight="120" 
+        <ListView ItemsSource="{Binding RM}" SeparatorVisibility="None"  RowHeight="80" 
 			IsPullToRefreshEnabled="true"
 			RefreshCommand="{Binding Handle_Refreshing}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-
                     <ViewCell>
-
-                        <StackLayout BackgroundColor="Gray" Margin="10">
+                                <StackLayout BackgroundColor="#FFB266" Margin="10">
                             <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
                             <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
