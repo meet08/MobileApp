@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:partials="clr-namespace:Assignment.CardView"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Assignment.Views.ChatPage"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
@@ -9,12 +10,20 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-
-            <ListView Grid.Row="0" ItemsSource="{Binding ListChat}"
+            <ListView Grid.Row="0" 
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding ListChat}" 
+                 Margin="0" 
+                 HasUnevenRows="True" 
+                 VerticalOptions="FillAndExpand" 
+                 SeparatorColor="Transparent" >
+            </ListView>
+            <!--<ListView Grid.Row="0" ItemsSource="{Binding ListChat}"
 				SeparatorVisibility="None" x:Name="listchat">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -23,19 +32,23 @@
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
+            <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 BackgroundColor="LightGray"
+                 Grid.Row="1"/>
+            <!--<Grid Grid.Row="1" RowSpacing="5">-->
 
-            <Grid Grid.Row="1" RowSpacing="5">
+            <partials:ChatInputBarView Grid.Row="2"
+                                   Margin="0,0,10,0"/>
 
-                <Grid.ColumnDefinitions>
+            <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-
                 <Entry Placeholder="Write Message .." Grid.Column="0" Text="{Binding Message}" x:Name="_etMessage"/>
-                <Button Text="Send!" Grid.Column="1" Command="{Binding OnSend}"/>
-            </Grid>
+                <Button Text="Send!" Grid.Column="1" Command="{Binding OnSend}"/>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

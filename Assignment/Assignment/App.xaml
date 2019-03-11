@@ -2,9 +2,11 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
-             x:Class="Assignment.App">
+                        xmlns:local="clr-namespace:Assignment.Helper"
+                        x:Class="Assignment.App">
     <Application.Resources>
         <ResourceDictionary>
+            <local:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="#e29b49"/>
                 <Setter Property="BarTextColor" Value="White"/>

@@ -5,6 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"         
              x:Class="Assignment.Views.RoomPage"
              x:Name="contpage"
+             xmlns:custom="clr-namespace:Assignment.CustomControls"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Room List">
     <ContentPage.ToolbarItems>
@@ -15,24 +16,28 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
+                <!--<custom:RoundedCornerList RoundedCornerRadius="8">-->
         <ListView ItemsSource="{Binding RM}" SeparatorVisibility="None"  RowHeight="80" 
 			IsPullToRefreshEnabled="true"
 			RefreshCommand="{Binding Handle_Refreshing}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                                <StackLayout BackgroundColor="#FFB266" Margin="10">
-                            <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
+                                <Frame CornerRadius="5"  BackgroundColor="#FFB266" OutlineColor="Transparent" Margin="10">
+                                <StackLayout>
+                            <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="20"/>
                             <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
                                 </TapGestureRecognizer>
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
-                    </ViewCell>
+                                </Frame>
+                            </ViewCell>
 
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+                <!--</custom:RoundedCornerList>-->
             </StackLayout>
             <StackLayout IsVisible="{Binding IsBusy}" Padding="0"
                  AbsoluteLayout.LayoutFlags="PositionProportional"
