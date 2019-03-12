@@ -56,7 +56,7 @@ namespace Assignment.Droid
                 if (!string.IsNullOrEmpty(customControl.Placeholder))
                 {
                     Control.Hint = customControl.Placeholder;
-                    Control.SetHintTextColor(customControl.PlaceholderColor.ToAndroid());
+                   // Control.SetHintTextColor(customControl.PlaceholderColor.ToAndroid());
 
                 }
             }
@@ -97,7 +97,7 @@ namespace Assignment.Droid
         {
             GradientDrawable gd = new GradientDrawable();
             gd.SetCornerRadius(10);
-            gd.SetStroke(2, Color.Black.ToAndroid());
+            gd.SetStroke(2, Color.LightGray.ToAndroid());
             this.Control.Background = gd;
         }
     }

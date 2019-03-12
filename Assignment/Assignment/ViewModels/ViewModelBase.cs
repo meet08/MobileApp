@@ -12,7 +12,10 @@ namespace Assignment.ViewModels
     {
         protected INavigationService NavigationService { get; set; }
         protected IEventAggregator EventAggregator { get; set; }
-
+        public ViewModelBase()
+        {
+                
+        }
         private string _title;
         public string Title
         {

@@ -21,13 +21,29 @@ namespace Assignment.ViewModels
         public DelegateCommand OnSend { private set; get; }
         private string message;
         public ObservableCollection<Chat> _lstChat;
-        
+
+        public bool ShowScrollTap { get; set; } = false; //Show the jump icon 
+        public bool LastMessageVisible { get; set; } = true;
+        public int PendingMessageCount { get; set; } = 0;
+        public bool PendingMessageCountVisible { get { return PendingMessageCount > 0; } }
+        public Queue<Chat> DelayedMessages { get; set; } = new Queue<Chat>();
+
+        public DelegateCommand MessageAppearingCommand { get; set; }
+        public DelegateCommand MessageDisappearingCommand { get; set; }
+
+
         public ChatPageViewModel(INavigationService navigation) : base(navigation)
         {
             NavigationService = navigation;
             OnSend = new DelegateCommand(Handle_Clicked);
             _lstChat = new ObservableCollection<Chat>();
+           
+            //MessageAppearingCommand = new DelegateCommand<Chat>(OnMessageAppearing);
+            //MessageDisappearingCommand = new DelegateCommand<Chat>(OnMessageDisappearing);
         }
+
+
+
         public ObservableCollection<Chat> ListChat
         {
             get
@@ -95,9 +111,21 @@ namespace Assignment.ViewModels
             // firsth chat object
             //room name 1---okey
 
-            var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName };
-            await db.saveMessage(chatOBJ, Id);
+            //var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName };
+            //await db.saveMessage(chatOBJ, Id);
+            if (!string.IsNullOrEmpty(Message))
+            {
+                var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName };
+              //  ListChat.Insert(0, chatOBJ);
+               // Messages.Insert(0, new ListChat() { Text = TextToSend, User = App.User });
+                await db.saveMessage(chatOBJ, Id);
+                Message = string.Empty;
+            }
 
+
+        }
+        public ChatPageViewModel()
+        {
 
         }
         public async Task GettingChat()

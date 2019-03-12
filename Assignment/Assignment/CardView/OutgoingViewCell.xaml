@@ -5,6 +5,7 @@
     <Frame BackgroundColor="Gray"
          Padding="10"
          HasShadow="False"
+          
          Margin="80,10,10,10" CornerRadius="5">
         <Label Text="{Binding UserMessage}" TextColor="White"/>
     </Frame>

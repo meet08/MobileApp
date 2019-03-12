@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:partials="clr-namespace:Assignment.CardView"
+             xmlns:controls="clr-namespace:Assignment.Controls"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Assignment.Views.ChatPage"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
@@ -15,15 +16,18 @@
                 <RowDefinition Height="1" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-
-            <ListView Grid.Row="0" 
+            <controls:ExtendedListView Grid.Row="0" 
                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
                  ItemsSource="{Binding ListChat}" 
-                 Margin="0" 
-                 HasUnevenRows="True" 
+                 Margin="0"
+                 HasUnevenRows="True" x:Name="ChatList"
                  VerticalOptions="FillAndExpand" 
-                 SeparatorColor="Transparent" >
-            </ListView>
+                 SeparatorColor="Transparent"
+                 ItemAppearing="listItemAppearing"
+                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+            </controls:ExtendedListView>
+            
             <!--<ListView Grid.Row="0" ItemsSource="{Binding ListChat}"
 				SeparatorVisibility="None" x:Name="listchat">
                 <ListView.ItemTemplate>

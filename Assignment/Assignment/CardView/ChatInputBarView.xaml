@@ -12,7 +12,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <controls:ExpendEditorControl  
+        <controls:ExpendEditorControl  x:Name="chatTextInput"
                  Text="{Binding Message}" 
                  Margin="1"
                 TextColor="LightGray"
@@ -24,7 +24,7 @@
                  Placeholder="Type your message here"
                  Grid.Row="0" 
                  Grid.Column="0"/>
-        <Label Text="Send"
+        <!--<Label Text="Send"
                Grid.Row="0"
                Grid.Column="1"
                VerticalTextAlignment="Center">
@@ -32,6 +32,11 @@
                 <TapGestureRecognizer
                       Command="{Binding OnSend}"/>
             </Label.GestureRecognizers>
-        </Label>
+        </Label>-->
+        <Button Text="Send"
+                Grid.Row="0"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                Command="{Binding OnSend}"/>
     </Grid>
 </ContentView>

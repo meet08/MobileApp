@@ -5,6 +5,7 @@
     <Frame BackgroundColor="LightBlue"
          Padding="10"
          HasShadow="False"
+          
          Margin="10,10,80,10" CornerRadius="5">
         <StackLayout Orientation="Vertical">
             <Label Text="{Binding UserName}" FontSize="Small"></Label>
