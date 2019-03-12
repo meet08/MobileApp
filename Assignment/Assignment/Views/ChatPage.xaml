@@ -8,7 +8,8 @@
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="{Binding RoomName}">
     <ContentPage.Content>
-        <Grid>
+        <Grid RowSpacing="0" 
+           ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="1" />

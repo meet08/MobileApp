@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Assignment.CardView.ChatInputBarView">
+             x:Class="Assignment.CardView.ChatInputBarView"
+             xmlns:controls="clr-namespace:Assignment.Controls">
     <Grid RowSpacing="0" 
            ColumnSpacing="0">
         <Grid.RowDefinitions>
@@ -11,11 +12,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Entry  
+        <controls:ExpendEditorControl  
                  Text="{Binding Message}" 
-                 Margin="1"  
-                 TextColor="Black" 
+                 Margin="1"
+                TextColor="LightGray"
+                 
                  Keyboard="Chat"  
+            IsExpandable="true"
                  HorizontalOptions="FillAndExpand" 
                  PlaceholderColor="LightGray"
                  Placeholder="Type your message here"

@@ -8,12 +8,12 @@
         <ResourceDictionary>
             <local:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#e29b49"/>
+                <Setter Property="BarBackgroundColor" Value="#19374F"/>
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
-            <Color x:Key="GenericBackgroundColor">#FFFFFF</Color>
-            <Color x:Key="ActivityIndicatorColor">#e29b49</Color>
-            <Color x:Key="LoadingColor">#e29b49</Color>
+            <Color x:Key="GenericBackgroundColor">#19374F</Color>
+            <Color x:Key="ActivityIndicatorColor">White</Color>
+            <Color x:Key="LoadingColor">White</Color>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

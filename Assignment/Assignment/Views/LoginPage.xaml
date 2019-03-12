@@ -8,8 +8,8 @@
              Title="Login Page">
 
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10,30,10,10" Spacing="10">
-        <Entry Text="{Binding UserName}" Placeholder="User Name" HorizontalTextAlignment="Center" BackgroundColor="Black" WidthRequest="275" HeightRequest="40" TextColor="White" HorizontalOptions="CenterAndExpand" PlaceholderColor="White" ></Entry>
-        <Button Text="Ok" Command="{Binding LoginCommand}" HeightRequest="50" TextColor="White" BackgroundColor="#ed7e1e" WidthRequest="280" HorizontalOptions="Center" FontSize="Medium"></Button>
+        <Entry Text="{Binding UserName}" Placeholder="User Name" HorizontalTextAlignment="Center" BackgroundColor="Black" WidthRequest="275" HeightRequest="50" TextColor="White" HorizontalOptions="CenterAndExpand" PlaceholderColor="White" ></Entry>
+        <Button Text="Ok" Command="{Binding LoginCommand}" HeightRequest="50" TextColor="Black" BackgroundColor="LightGray" WidthRequest="280" HorizontalOptions="Center" FontSize="Medium"></Button>
     </StackLayout>
   
 </ContentPage>

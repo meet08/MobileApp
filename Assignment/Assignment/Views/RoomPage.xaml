@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"         
              x:Class="Assignment.Views.RoomPage"
              x:Name="contpage"
-             xmlns:custom="clr-namespace:Assignment.CustomControls"
+          
+             xmlns:stack="clr-namespace:Assignment.Controls"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Room List">
     <ContentPage.ToolbarItems>
@@ -24,13 +25,15 @@
                 <DataTemplate>
                     <ViewCell>
                                 <Frame CornerRadius="5"  BackgroundColor="#FFB266" OutlineColor="Transparent" Margin="10">
-                                <StackLayout>
-                            <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="20"/>
-                            <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
+                                <StackLayout >
+                                        <stack:Gradient_Stack StartColor="#082237" EndColor="#477690" >
+                                            <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="25"/>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
+                                                </TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                        </stack:Gradient_Stack>
+                                    </StackLayout>
                                 </Frame>
                             </ViewCell>
 
