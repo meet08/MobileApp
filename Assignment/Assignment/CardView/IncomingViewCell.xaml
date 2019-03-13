@@ -10,7 +10,7 @@
         <StackLayout Orientation="Vertical">
             <Label Text="{Binding UserName}" FontSize="Small"></Label>
             <Label Text="{Binding UserMessage}" FontSize="Medium"/>
-            <!--<Label Text="{Binding datetime}" FontSize="micro"/>-->
+            <!--<Label Text="{Binding DatenTime}" FontSize="micro"/>-->
         </StackLayout>
         
     </Frame>

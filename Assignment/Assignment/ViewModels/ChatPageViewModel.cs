@@ -102,6 +102,10 @@ namespace Assignment.ViewModels
 
             //});
             ListChat = db.subChat(Id);
+            foreach(var items in ListChat)
+            {
+                //items.DatenTime = items.DatenTime.
+            }
             RaisePropertyChanged("ListChat");
 
         }
@@ -110,12 +114,12 @@ namespace Assignment.ViewModels
         {
             // firsth chat object
             //room name 1---okey
-
+            string timenDate = DateTime.Now.ToString("yyyy-MM-dd hh:MM:ss");
             //var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName };
             //await db.saveMessage(chatOBJ, Id);
             if (!string.IsNullOrEmpty(Message))
             {
-                var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName };
+                var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName, DatenTime=timenDate };
               //  ListChat.Insert(0, chatOBJ);
                // Messages.Insert(0, new ListChat() { Text = TextToSend, User = App.User });
                 await db.saveMessage(chatOBJ, Id);

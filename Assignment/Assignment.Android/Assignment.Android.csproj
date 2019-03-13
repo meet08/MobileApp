@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="BorderlessEditorRenderer.cs" />
     <Compile Include="CustomEditorRenderer.cs" />
+    <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="Gradient_Stack_Renderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

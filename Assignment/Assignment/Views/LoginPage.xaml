@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:cusentry="clr-namespace:Assignment.Controls;assembly=Assignment"
              x:Class="Assignment.Views.LoginPage"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Login Page">
 
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10,30,10,10" Spacing="10">
-        <Entry Text="{Binding UserName}" Placeholder="User Name" HorizontalTextAlignment="Center" BackgroundColor="Black" WidthRequest="275" HeightRequest="50" TextColor="White" HorizontalOptions="CenterAndExpand" PlaceholderColor="White" ></Entry>
-        <Button Text="Ok" Command="{Binding LoginCommand}" HeightRequest="50" TextColor="Black" BackgroundColor="LightGray" WidthRequest="280" HorizontalOptions="Center" FontSize="Medium"></Button>
+        <Label Text="Add a unique UserName to continue" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10" FontSize="Small" TextColor="#19374F"></Label>
+        <cusentry:CustomEntry Text="{Binding UserName}" Placeholder="User Name" HorizontalTextAlignment="Center" BackgroundColor="Transparent" WidthRequest="275" HeightRequest="50" TextColor="#19374F" HorizontalOptions="CenterAndExpand" PlaceholderColor="#19374F" CornerRadius="10"></cusentry:CustomEntry>
+        <Button Text="Go" Command="{Binding LoginCommand}" HeightRequest="50" TextColor="White" BackgroundColor="#19374F" WidthRequest="280" HorizontalOptions="Center" FontSize="Medium"></Button>
     </StackLayout>
   
 </ContentPage>

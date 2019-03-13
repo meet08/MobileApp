@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+              xmlns:cusentry="clr-namespace:Assignment.Controls;assembly=Assignment"
              x:Class="Assignment.Views.AddRoomPage"
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Add Room">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Entry Text="{Binding RoomName}" Placeholder="Room Name"></Entry>
-            <Button Text="Ok" Command="{Binding OnPressedButton}"></Button>
+            <Label Text="Add your room and start Chatting with your buddies" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10" FontSize="Small" TextColor="#19374F"></Label>
+            <cusentry:CustomEntry Text="{Binding RoomName}" Placeholder="Room Name" HorizontalTextAlignment="Center" BackgroundColor="Transparent" WidthRequest="275" HeightRequest="50" TextColor="#19374F" HorizontalOptions="CenterAndExpand" PlaceholderColor="#19374F" CornerRadius="10"></cusentry:CustomEntry>
+            <Button Text="Add" Command="{Binding OnPressedButton}" HeightRequest="50" TextColor="White" BackgroundColor="#19374F" WidthRequest="280" HorizontalOptions="Center" FontSize="Medium"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

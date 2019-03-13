@@ -11,9 +11,9 @@
                 <Setter Property="BarBackgroundColor" Value="#19374F"/>
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
-            <Color x:Key="GenericBackgroundColor">#19374F</Color>
-            <Color x:Key="ActivityIndicatorColor">White</Color>
-            <Color x:Key="LoadingColor">White</Color>
+            <Color x:Key="GenericBackgroundColor">White</Color>
+            <Color x:Key="ActivityIndicatorColor">#19374F</Color>
+            <Color x:Key="LoadingColor">#19374F</Color>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

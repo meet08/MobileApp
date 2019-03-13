@@ -17,6 +17,11 @@ namespace Assignment.Models
             get;
             set;
         }
+        public string DatenTime
+        {
+            get;
+            set;
+        }
         //public string datetime
         //{
         //    get;

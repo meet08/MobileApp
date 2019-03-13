@@ -15,7 +15,7 @@
         <controls:ExpendEditorControl  x:Name="chatTextInput"
                  Text="{Binding Message}" 
                  Margin="1"
-                TextColor="LightGray"
+                TextColor="#19374F"
                  
                  Keyboard="Chat"  
             IsExpandable="true"

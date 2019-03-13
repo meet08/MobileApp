@@ -17,25 +17,35 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
+            <StackLayout  HorizontalOptions="Center">
+                <Label Text="Select a room to Start chatting with your Pals." HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Medium" TextColor="#19374F">
+                </Label>
+                <Label Text="Hope they are online !!!" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Medium" TextColor="#19374F">
+                </Label>
+                <Label Text="Or Create your new room" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Medium" TextColor="#19374F">
+                </Label>
+                    <Label>
+                     
+                    </Label>
                 <!--<custom:RoundedCornerList RoundedCornerRadius="8">-->
-        <ListView ItemsSource="{Binding RM}" SeparatorVisibility="None"  RowHeight="80" 
+            </StackLayout>
+            <StackLayout Spacing="10">
+                    <ListView ItemsSource="{Binding RM}" CachingStrategy="RecycleElement" SeparatorVisibility="Default"   RowHeight="80" 
 			IsPullToRefreshEnabled="true"
 			RefreshCommand="{Binding Handle_Refreshing}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                                <Frame CornerRadius="5"  BackgroundColor="#FFB266" OutlineColor="Transparent" Margin="10">
-                                <StackLayout >
-                                        <stack:Gradient_Stack StartColor="#082237" EndColor="#477690" >
-                                            <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="25"/>
+                            <ViewCell>
+                                    <Frame CornerRadius="30" BackgroundColor="#19374F" BorderColor="Transparent" OutlineColor="#19374F" Padding="10" Margin="5,5,5,5">
+                                        <StackLayout BackgroundColor="#19374F"   HeightRequest="200" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,10,0,10" FontSize="Medium"/>
                                             <StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}">
-                                                </TapGestureRecognizer>
-                                            </StackLayout.GestureRecognizers>
-                                        </stack:Gradient_Stack>
-                                    </StackLayout>
-                                </Frame>
-                            </ViewCell>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.Handle_ItemSelected, Source={x:Reference Name=contpage}}" NumberOfTapsRequired="1">
+                                        </TapGestureRecognizer>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                                    </Frame>
+                                </ViewCell>
 
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -51,7 +61,7 @@
                 <Label Text="Loading Room List..." HorizontalOptions="Center" TextColor="{DynamicResource LoadingColor}"/>
 
             </StackLayout>
-
+            </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
