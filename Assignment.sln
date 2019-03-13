@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment", "Assignment\Assignment\Assignment.csproj", "{5C8E5371-A919-4489-B7E5-81334537F4AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment", "Assignment\Assignment\Assignment.csproj", "{5C8E5371-A919-4489-B7E5-81334537F4AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment.Android", "Assignment\Assignment.Android\Assignment.Android.csproj", "{00FA20FE-511B-42E9-A092-55A921E54929}"
 EndProject

@@ -56,6 +56,14 @@ namespace Assignment.Service
                            .AsObservableCollection<Chat>();
         }
 
+        public ObservableCollection<Chat> GetUsers()
+        {
+
+            return fbClient.Child("ChatApp/")
+                           .AsObservable<Chat>()
+                           .AsObservableCollection<Chat>();
+        }
+
 
     }
 }

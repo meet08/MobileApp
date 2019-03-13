@@ -7,6 +7,9 @@
          HasShadow="False"
           
          Margin="80,10,10,10" CornerRadius="5">
-        <Label Text="{Binding UserMessage}" TextColor="White"/>
+        <StackLayout>
+        <Label Text="{Binding UserMessage}" TextColor="White" FontSize="Medium"/>
+        <!--<Label Text="{Binding datetime}" TextColor="White" FontSize="micro"/>-->
+        </StackLayout>
     </Frame>
 </ViewCell>

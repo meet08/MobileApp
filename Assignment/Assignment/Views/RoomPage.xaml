@@ -10,7 +10,7 @@
              BackgroundColor="{DynamicResource GenericBackgroundColor}"
              Title="Room List">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Command="{Binding OnToolbarItemClicked}"/>
+        <ToolbarItem Icon="addUser" Command="{Binding OnToolbarItemClicked}"/>
         <!--<ToolbarItem Text="?" Clicked="Info_Clicked"/>-->
 
     </ContentPage.ToolbarItems>

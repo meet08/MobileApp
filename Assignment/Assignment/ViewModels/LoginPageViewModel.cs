@@ -1,4 +1,5 @@
 ﻿using Assignment.Models;
+using Assignment.Service;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -11,6 +12,7 @@ namespace Assignment.ViewModels
 {
 	public class LoginPageViewModel : ViewModelBase
 	{
+        DBFire db = new DBFire();
         public DelegateCommand LoginCommand { get; }
 
         public LoginPageViewModel(INavigationService navigation) :base(navigation)
@@ -37,6 +39,7 @@ namespace Assignment.ViewModels
         public async void LogInCommandExecuted()
         {
             User.UserName = UserName;
+
             await NavigationService.NavigateAsync("RoomPage");
         }
     }

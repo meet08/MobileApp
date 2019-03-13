@@ -119,7 +119,8 @@ namespace Assignment.ViewModels
               //  ListChat.Insert(0, chatOBJ);
                // Messages.Insert(0, new ListChat() { Text = TextToSend, User = App.User });
                 await db.saveMessage(chatOBJ, Id);
-                Message = string.Empty;
+                Message = null;
+                RaisePropertyChanged("Message");
             }
 
 

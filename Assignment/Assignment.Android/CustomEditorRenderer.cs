@@ -30,6 +30,7 @@ namespace Assignment.Droid
         {
         }
 
+        
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Editor> e)
         {
             base.OnElementChanged(e);
@@ -38,6 +39,7 @@ namespace Assignment.Droid
             {
                 if (initial)
                 {
+                    Control.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
                     originalBackground = Control.Background;
                     initial = false;
                 }
@@ -91,6 +93,7 @@ namespace Assignment.Droid
                     this.Control.Background = originalBackground;
                 }
             }
+
         }
 
         void ApplyBorder()

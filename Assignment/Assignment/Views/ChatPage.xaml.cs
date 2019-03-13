@@ -15,13 +15,6 @@ namespace Assignment.Views
         public ChatPage()
         {
             InitializeComponent();
-            
-            //ScrollListCommand = new Command(() =>
-            //{
-            //    Device.BeginInvokeOnMainThread(() =>
-            //      ChatList.ScrollTo((this.BindingContext as ChatPageViewModel).ListChat.Last(), ScrollToPosition.End, false)
-            //  );
-            //});
         }
 
         protected override void OnAppearing()
@@ -41,6 +34,7 @@ namespace Assignment.Views
                     {
                         var target = ChatList.ItemsSource.OfType<Chat>().Last();
                         ChatList.ScrollTo(target, ScrollToPosition.End, false);
+                        Count = chatvm.ListChat.Count;
                     });
 
                 }
