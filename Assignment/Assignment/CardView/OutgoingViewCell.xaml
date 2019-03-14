@@ -14,6 +14,6 @@
         </StackLayout>
         
     </Frame>
-    <Label FontSize="Micro" Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Black"></Label>
+        <Label FontSize="Micro" HorizontalTextAlignment="End"  Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Black"></Label>
     </StackLayout>
 </ViewCell>
