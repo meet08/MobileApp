@@ -17,11 +17,12 @@ namespace Assignment.Models
             get;
             set;
         }
-        public string DatenTime
+        public DateTime MessageDateTime
         {
             get;
             set;
         }
+
         //public string datetime
         //{
         //    get;

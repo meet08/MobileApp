@@ -119,7 +119,7 @@ namespace Assignment.ViewModels
             //await db.saveMessage(chatOBJ, Id);
             if (!string.IsNullOrEmpty(Message))
             {
-                var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName, DatenTime=timenDate };
+                var chatOBJ = new Chat { UserMessage = Message, UserName = User.UserName, MessageDateTime = DateTime.Now };
               //  ListChat.Insert(0, chatOBJ);
                // Messages.Insert(0, new ListChat() { Text = TextToSend, User = App.User });
                 await db.saveMessage(chatOBJ, Id);

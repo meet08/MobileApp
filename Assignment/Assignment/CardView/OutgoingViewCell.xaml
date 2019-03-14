@@ -2,6 +2,7 @@
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment.CardView.OutgoingViewCell">
+    <StackLayout>
     <Frame BackgroundColor="Gray"
          Padding="10"
          HasShadow="False"
@@ -11,5 +12,8 @@
         <Label Text="{Binding UserMessage}" TextColor="White" FontSize="Medium"/>
          <!--<Label Text="{Binding DatenTime}" TextColor="White" FontSize="micro"/>-->
         </StackLayout>
+        
     </Frame>
+    <Label FontSize="Micro" Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Black"></Label>
+    </StackLayout>
 </ViewCell>
